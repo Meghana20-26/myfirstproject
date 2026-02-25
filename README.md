@@ -7,14 +7,14 @@ This Project Contains Two Python Projects Completed As Part of My Internship Tas
 * Final result display
   
 2.Student Record Management System
-  *Add student rcord
-  *view student details
-  *Delete student record
-  *Menu-driven interface
+* Add student rcord
+* view student details
+* Delete student record
+* Menu-driven interface
   
 ## Technologies Used
-*Python
-*Functions
+* Python
+* Functions
 *Loops
-*Conditional statements
-*Lists
+* Conditional statements
+* Lists
