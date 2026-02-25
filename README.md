@@ -15,6 +15,6 @@ This Project Contains Two Python Projects Completed As Part of My Internship Tas
 ## Technologies Used
 * Python
 * Functions
-*Loops
+* Loops
 * Conditional statements
 * Lists
