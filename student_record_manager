@@ -1,0 +1,109 @@
+students = []
+
+def add_student():
+    try:
+        student_id = int(input("Enter student ID: "))
+        name = input("Enter student Name: ")
+        marks = float(input("Enter Marks: "))
+
+        student = {
+            "id" : student_id,
+            "name" : name, 
+            "marks" : marks
+        }
+
+        students.append(student)
+        print("student Added Successfully\n")
+
+    except ValueError:
+        print("Invalid input! please enter correct data.\n ")
+
+def view_students():
+    if not students:
+        print("No students found.\n")
+        return
+
+    print("\n----student List----")
+    for student in students:
+        print(f"ID: {student['id']}, Name:{student['name']}, Marks:{student['marks']}")
+        print()
+
+def search_student():
+    if not students:
+        print("No studentsto search.\n")
+        return
+    search_value = input("Enter student ID or Name to search:")
+
+    found = False
+    for student in students:
+        if str(student["id"]) == search_value or student["name"].lower() == search_value.lower():
+            print(f"\nFound student -> ID:{student['id']},Name: {student['name']},Marks: {student['marks']}\n")
+            found = True
+
+            if not found:
+                print("student not found.\n")
+
+def calculate_average():
+    if not students:
+        print("No students available.\n ")
+        return
+    total = 0
+    for student in students:
+        total +=student["marks"]
+
+    average = total / len(students)
+    print(f"\nAverage Marks:{average:.2f}\n")
+
+def find_topper():
+    if not students:
+        print("No students available.\n")
+        return
+    
+    topper = students[0]
+
+    for student in students:
+        if student["marks"] > topper["marks"]:
+            topper = student
+
+    print(f"\nTopper : {topper['name']} (Marks :{topper['marks']}\n") 
+
+
+def menu():
+        
+        while True:
+            print("==== student Management System====")
+            print("1. Add student")
+            print("2. view student")
+            print("3. search student")
+            print("4. Display Average Marks")
+            print("5. Find Topper")
+            print("6. Exit")
+
+            choice = input("Enter your choice:")
+
+            if choice == "1":
+                add_student()
+            elif choice == "2":
+                view_students()
+            elif choice == "3":
+                search_student()
+            elif choice == "4":
+                calculate_average()
+            elif choice == "5":
+                find_topper()
+            elif choice == "6":
+                print("Exiting program...")
+                break
+            else:
+                print("Invalid choice! Try again.\n")
+
+menu()                
+
+
+               
+
+
+
+                        
+
+
